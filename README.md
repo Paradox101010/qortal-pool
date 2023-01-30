@@ -1,0 +1,7 @@
+# qortal-pool
+A truly decentralized p2p mining pool built on Qortal. The operational source code exposed in plain sight for everyone to see. Verify exactly what what your mining power is actually doing. Never be forced to trust another centralized mining pool again. Join Qortal Pool.
+qortalCli  handles communication between a client and qortal Stratum. Listens to incoming messages from the client and performs operations based on the messages, such as handling subscribe, authorize, configure, multi_version, and submit messages. Also checks for flooded messages and invalid messages and will emit events when certain conditions are met (e.g. 'qortalCli.socket.flooded', 'qortalCli.mining.unknown'). The events module is required to add event handling capabilities to the qortalCli function. 
+
+
+The qortalCli  creates a new instance, with parameters for configuration, socket connection, unique identifier, and authorization function. The function sets several properties on this object such as id, activity, authorized, difficulty, messages, shares, pendingDifficulty, and staticDifficulty.
+qortalCli implements  sendJson, which sends JSON data over the socket connection, sendLabel, which returns a label string for the client, enqueueDifficulty, which pushes an updated difficulty to a queue, validateName, which validates a client name, validatePassword, which validates a password, validateMessages, which handles incoming messages, and validateData, which validates incoming data over the socket.
